@@ -2,45 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manikesh Kumar | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f5f7fa;
-      color: #333;
+      background-color: #f8f9fa;
     }
     header {
-      background-color: #2c3e50;
+      background: linear-gradient(90deg, #2c3e50, #34495e);
       color: white;
-      padding: 2rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     img.profile {
-      width: 150px;
+      width: 140px;
       border-radius: 50%;
       border: 4px solid white;
       margin-top: 1rem;
     }
     section {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+      padding: 3rem 1rem;
     }
-    h2 {
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.5rem;
-    }
-    .skills span, .contact a {
+    .skills span {
+      margin: 0.5rem;
       display: inline-block;
-      margin: 0.3rem 0.5rem;
       padding: 0.5rem 1rem;
-      background-color: #e3e3e3;
-      border-radius: 20px;
-      text-decoration: none;
-      color: #333;
+      background-color: #dee2e6;
+      border-radius: 25px;
+    }
+    .card:hover {
+      transform: scale(1.03);
+      transition: 0.3s ease-in-out;
+    }
+    .dark-mode {
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    .dark-mode header,
+    .dark-mode footer {
+      background-color: #1e1e1e;
     }
     footer {
       background-color: #2c3e50;
@@ -49,90 +52,93 @@
       padding: 1rem;
     }
   </style>
-  <style>
-    html {
-      scroll-behavior: smooth;
-    }
-  </style>
 </head>
 <body>
 
-  <header>
-    <h1>MANIKESH KUMAR</h1>
-    <p>B.Tech in Data Science & AI | IIIT Dharwad</p>
-    <img src="my-photo.png" alt="Profile Photo" class="profile">
+<header data-aos="fade-down">
+  <h1>MANIKESH KUMAR</h1>
+  <p>B.Tech in Data Science & AI | IIIT Dharwad</p>
+  <img src="my-photo.png" alt="Profile Photo" class="profile">
+  <p id="animated-text">Welcome to my portfolio!</p>
+</header>
 
-<p id="animated-text">Welcome to my portfolio!</p>
+<div class="text-center mt-3">
+  <button class="btn btn-dark" onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
+</div>
 
+<section data-aos="fade-right">
+  <h2>About Me</h2>
+  <p>Hello! I’m a student at IIIT Dharwad pursuing Data Science & AI. I’m passionate about machine learning, data science, and generative AI. I enjoy solving real-world problems and building smart systems.</p>
+</section>
+
+<section data-aos="fade-left">
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>Python</span>
+    <span>Java</span>
+    <span>Machine Learning</span>
+    <span>HTML & CSS</span>
+    <span>JavaScript</span>
+    <span>Git</span>
+    <span>Speech Processing</span>
+  </div>
+</section>
+
+<section data-aos="zoom-in">
+  <h2>Projects</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card p-3 mb-4 shadow-sm">
+        <h5>🔊 Speaker Recognition</h5>
+        <p>Built using ECAPA-TDNN & LibriSpeech. Identifies speakers with high accuracy.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3 mb-4 shadow-sm">
+        <h5>📊 PCA + SVD Visualizer</h5>
+        <p>Interactive JS tool to visualize linear algebra concepts like PCA & SVD.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card p-3 mb-4 shadow-sm">
+        <h5>🌐 Personal Portfolio</h5>
+        <p>This interactive website built with HTML, Bootstrap, and AOS animations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section data-aos="fade-up">
+  <h2>Contact</h2>
+  <div class="contact">
+    <a href="mailto:23bds032@iiitdwd.ac.in" class="btn btn-outline-primary m-1">📧 Email</a>
+    <a href="https://github.com/IdBhsiM" class="btn btn-outline-dark m-1">💻 GitHub</a>
+    <a href="https://linkedin.com/in/manikesh-kumar" class="btn btn-outline-info m-1">🔗 LinkedIn</a>
+  </div>
+</section>
+
+<footer>
+  © 2025 Manikesh Kumar | Built with ❤️ using HTML + Bootstrap + AOS
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
+  AOS.init();
+
+  // Typing animation (simplified)
   let text = document.getElementById("animated-text");
   text.style.opacity = 0;
   setTimeout(() => {
     text.style.transition = "opacity 2s";
     text.style.opacity = 1;
   }, 500);
-</script>
 
-  </header>
-<button onclick="toggleDarkMode()">🌓 Toggle Dark Mode</button>
-
-<script>
+  // Dark Mode
   function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
   }
 </script>
-
-<style>
-  .dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-  }
-  .dark-mode header,
-  .dark-mode footer {
-    background-color: #1e1e1e;
-  }
-</style>
-
-  <section>
-    <h2>About Me</h2>
-    <p>Hello! I’m a student at IIIT Dharwad pursuing Data Science & AI. I’m passionate about machine learning, Data Science, and generative AI.</p>
-  </section>
-
-  <section>
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Python</span>
-      <span>Java</span>
-      
-      <span>Machine Learning</span>
-      <span>HTML & CSS</span>
-      <span>JavaScript</span>
-      <span>Git</span>
-      <span>Speech Processing</span>
-    </div>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>Speaker Recognition</strong> – Built using ECAPA-TDNN & LibriSpeech</li>
-      <li><strong>PCA + SVD Visualizer</strong> – Linear Algebra project in JS</li>
-      <li><strong>Personal Portfolio</strong> – This website!</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact">
-      <a href="mailto:23bds032@iiitdwd.ac.in">📧23bds032@iiitdwd.ac.in</a>
-      <a href="https://github.com/IdBhsiM">💻 GitHub</a>
-      <a href="https://linkedin.com/in/manikesh-kumar">🔗 LinkedIn</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Manikesh Kumar | Built with ❤️ on GitHub Pages
-  </footer>
 
 </body>
 </html>
