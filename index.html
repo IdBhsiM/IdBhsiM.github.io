@@ -10,6 +10,7 @@
     body {
       font-family: 'Segoe UI', sans-serif;
       background-color: #f8f9fa;
+      transition: background-color 0.3s, color 0.3s;
     }
     header {
       background: linear-gradient(90deg, #2c3e50, #34495e);
@@ -38,12 +39,34 @@
       transition: 0.3s ease-in-out;
     }
     .dark-mode {
-      background-color: #121212;
-      color: #e0e0e0;
+      background-color: #1e1e2f;
+      color: #f0f0f0;
     }
     .dark-mode header,
     .dark-mode footer {
-      background-color: #1e1e1e;
+      background-color: #12121f;
+      color: #f0f0f0;
+    }
+    .dark-mode .skills span {
+      background-color: #2a2a3b;
+      color: #e0e0e0;
+    }
+    .dark-mode .card {
+      background-color: #2a2a3b;
+      color: #e0e0e0;
+      border: none;
+    }
+    .dark-mode .btn-outline-primary,
+    .dark-mode .btn-outline-dark,
+    .dark-mode .btn-outline-info {
+      color: #f0f0f0;
+      border-color: #f0f0f0;
+    }
+    .dark-mode .btn-outline-primary:hover,
+    .dark-mode .btn-outline-dark:hover,
+    .dark-mode .btn-outline-info:hover {
+      background-color: #f0f0f0;
+      color: #121212;
     }
     footer {
       background-color: #2c3e50;
@@ -126,7 +149,6 @@
 <script>
   AOS.init();
 
-  // Typing animation (simplified)
   let text = document.getElementById("animated-text");
   text.style.opacity = 0;
   setTimeout(() => {
@@ -134,7 +156,6 @@
     text.style.opacity = 1;
   }, 500);
 
-  // Dark Mode
   function toggleDarkMode() {
     document.body.classList.toggle("dark-mode");
   }
